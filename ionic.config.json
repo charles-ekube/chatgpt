@@ -1,0 +1,7 @@
+{
+  "name": "gpt++",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
