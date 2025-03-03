@@ -7,13 +7,11 @@ declare global {
 
 
 
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
-import { IonContent, IonPage, IonButtons, IonMenuButton, IonLabel, IonRow, IonCol, IonIcon, IonFooter, IonModal, useIonRouter, IonList, IonItem, IonButton } from "@ionic/react";
-import { chevronDownOutline, contract, sparklesOutline, bookOutline, arrowUp } from "ionicons/icons";
+import React, { ChangeEvent, useRef, useState } from "react";
+import { IonContent, IonPage, IonButtons, IonMenuButton, IonLabel, IonRow, IonCol, IonIcon, IonFooter, useIonRouter, IonButton } from "@ionic/react";
+import { chevronDownOutline, contract, sparklesOutline, bookOutline } from "ionicons/icons";
 import { Add, Cpu, DocumentText, Gallery, Global, Microphone2, SearchNormal, Sound, VoiceSquare } from "iconsax-react";
 import Modal from "../../components/Modal";
-import Tabs from "../../components/Tabs";
-import { VoiceRecorder } from "capacitor-voice-recorder";
 import { useModelSelector } from "../../hooks/useModelSelector";
 // import "./App.css"; // Add custom CSS if needed
 

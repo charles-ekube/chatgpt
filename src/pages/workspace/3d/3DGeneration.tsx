@@ -1,9 +1,9 @@
-import { IonContent, IonFooter, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar, useIonRouter, IonModal, IonRouterLink, IonSpinner } from "@ionic/react";
-import { Gallery, I3DCubeScan, VideoPlay } from "iconsax-react";
-import { arrowBack, chevronDownOutline, settings, settingsOutline } from "ionicons/icons";
+import { IonContent, IonFooter, IonIcon, IonPage, useIonRouter, IonSpinner } from "@ionic/react";
+import { I3DCubeScan } from "iconsax-react";
+import { arrowBack, chevronDownOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import CustomButton from "../../../utils/Button";
-import Modal from "../../../components/Modal";
+// import Modal from "../../../components/Modal";
 import { CircularProgress } from "../../../components/workspace/CircularProgress";
 
 interface AspectRatio {
@@ -25,18 +25,7 @@ const ThreeDGeneration: React.FC = () => {
     const [numberOfImages, setNumberOfImages] = useState<number>(3);
     const navigation = useIonRouter();
 
-    const aspectRatios: AspectRatio[] = [
-        { label: "1:1", value: "1:1" },
-        { label: "1:2", value: "1:2" },
-        { label: "2:1", value: "2:1" },
-        { label: "2:3", value: "2:3" },
-        { label: "3:4", value: "3:4" },
-        { label: "4:5", value: "4:5" },
-        { label: "9:16", value: "9:16" },
-        { label: "3:2", value: "3:2" },
-        { label: "4:3", value: "4:3" },
-        { label: "16:9", value: "16:9" },
-    ];
+
 
     const goBack = () => {
         navigation.goBack();
@@ -202,7 +191,7 @@ const ThreeDGeneration: React.FC = () => {
                     </div>
                 </div>
             </IonFooter>
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} />
+            {/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} /> */}
         </IonPage>
     );
 };
