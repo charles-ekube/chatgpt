@@ -1,0 +1,62 @@
+<div>
+    <div id={"chatInputMenuContainer"}>
+        {/* <div id={"speechBtnContainer"} style={{ backgroundColor: "#EEF3F9" }}>
+            <Microphone2 size="20" color="#363636" />
+        </div> */}
+        <VoiceSquare size="32" color="#FF8A65" />
+        <IonList>
+
+            <IonItem button style={{ borderBottom: '1px solid #E7E7E7' , marginBottom: '16px' , paddingBottom: '16px' }}
+                detail={false}>
+                {/*
+                <Star1 size="26" color="#5D6993" /> */}
+                <IonLabel style={{ color: '#313131' , fontSize: '16px' , fontWeight: 500, marginLeft: '10px' }}>Referral
+                </IonLabel>
+            </IonItem>
+
+            <IonItem button style={{ borderBottom: '1px solid #E7E7E7' , marginBottom: '16px' , paddingBottom: '16px' }}
+                detail={false}>
+                {/*
+                <Trash size="26" color="#5D6993" /> */}
+                <IonLabel style={{ color: '#313131' , fontSize: '16px' , fontWeight: 500, marginLeft: '10px' }}>Clear
+                    History</IonLabel>
+            </IonItem>
+
+        </IonList>
+        {/*
+        <div id={"addFilleBtnContainer"} style={{ backgroundColor: "#1e1e1e" }}>
+            <Add size="20" color="#EEF3F9" />
+            <div id={"floatingMenu"}>
+                <ul>
+                    <li>
+                        <Gallery size="32" color="#FF8A65" />
+                        <p>Images</p>
+                    </li>
+                    <li>
+                        <DocumentText size="32" color="#FF8A65" />
+                        <p>Files</p>
+                    </li>
+                    <li>
+                        <Sound size="32" color="#FF8A65" />
+                        <p>Audio</p>
+                    </li>
+                </ul>
+            </div>
+        </div> */}
+        {/* <div id={"searchBtnContainer"} style={{ backgroundColor: "#88AEFF" }}>
+            <Global size="20" color="#03086F" />
+        </div> */}
+    </div>
+    {/* <div>
+        <div id={"speechBtnContainer"} style={{ backgroundColor: "#EEF3F9" }}>
+            <Microphone2 size="20" color="#363636" />
+        </div>
+        <div id={"addFilleBtnContainer"} style={{ backgroundColor: "#1e1e1e" }}>
+            <Add size="20" color="#EEF3F9" />
+        </div>
+        <div id={"searchBtnContainer"} style={{ backgroundColor: "#88AEFF" }}>
+            <Global size="20" color="#03086F" />
+        </div>
+    </div> */}
+
+</div>

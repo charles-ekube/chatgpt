@@ -1,100 +1,62 @@
-import {
-  IonContent,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
-  IonMenu,
-  IonMenuToggle,
-  IonNote,
-} from '@ionic/react';
-
-import { useLocation } from 'react-router-dom';
-import { archiveOutline, archiveSharp, bookmarkOutline, heartOutline, heartSharp, mailOutline, mailSharp, paperPlaneOutline, paperPlaneSharp, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
-import './Menu.css';
-
-interface AppPage {
-  url: string;
-  iosIcon: string;
-  mdIcon: string;
-  title: string;
-}
-
-const appPages: AppPage[] = [
-  {
-    title: 'Inbox',
-    url: '/folder/Inbox',
-    iosIcon: mailOutline,
-    mdIcon: mailSharp
-  },
-  {
-    title: 'Outbox',
-    url: '/folder/Outbox',
-    iosIcon: paperPlaneOutline,
-    mdIcon: paperPlaneSharp
-  },
-  {
-    title: 'Favorites',
-    url: '/folder/Favorites',
-    iosIcon: heartOutline,
-    mdIcon: heartSharp
-  },
-  {
-    title: 'Archived',
-    url: '/folder/Archived',
-    iosIcon: archiveOutline,
-    mdIcon: archiveSharp
-  },
-  {
-    title: 'Trash',
-    url: '/folder/Trash',
-    iosIcon: trashOutline,
-    mdIcon: trashSharp
-  },
-  {
-    title: 'Spam',
-    url: '/folder/Spam',
-    iosIcon: warningOutline,
-    mdIcon: warningSharp
-  }
-];
-
-const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonMenu, IonMenuToggle, IonPage, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
+import React from 'react';
+import { Redirect, Route } from 'react-router';
+import Home from '../pages/home/Home';
+import Discovery from '../pages/discovery/Discovery';
+import WorkSpace from '../pages/workspace/Workspace';
+import { searchOutline, settingsOutline } from 'ionicons/icons';
+import Settings from '../pages/profile/Settings';
+import ManageAccount from '../pages/profile/ManageAccount';
+import TextToImage from '../pages/workspace/text-to-image/TextToImage';
+import ImagePreview from '../pages/workspace/text-to-image/ImagePreview';
+import ImageStyleSelector from '../pages/workspace/text-to-image/ImageStyle';
 
 const Menu: React.FC = () => {
-  const location = useLocation();
+    const navigation = useIonRouter()
 
-  return (
-    <IonMenu contentId="main" type="overlay">
-      <IonContent>
-        <IonList id="inbox-list">
-          <IonListHeader>Inbox</IonListHeader>
-          <IonNote>hi@ionicframework.com</IonNote>
-          {appPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
-        </IonList>
 
-        <IonList id="labels-list">
-          <IonListHeader>Labels</IonListHeader>
-          {labels.map((label, index) => (
-            <IonItem lines="none" key={index}>
-              <IonIcon aria-hidden="true" slot="start" icon={bookmarkOutline} />
-              <IonLabel>{label}</IonLabel>
-            </IonItem>
-          ))}
-        </IonList>
-      </IonContent>
-    </IonMenu>
-  );
+    return (
+        // <IonSplitPane contentId='main' style={{ backgroundColor: '#E9E9E9' }} >
+        <IonMenu contentId='main' style={{ backgroundColor: '#E9E9E9' }} type='push' >
+            <IonContent style={{ '--background': '#E9E9E9' }}>
+
+                <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', padding: '40px 20px', height: '100%' }}>
+                    <div id='menuSearchContainer'>
+                        <IonIcon src={searchOutline} style={{ color: '#525252', fontSize: '20px' }} />
+                        <input placeholder='Search chats...' />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: "center" }}>
+                        <div>
+                            <h3 style={{ color: "#313131", fontSize: '20px', fontWeight: 500, textAlign: 'center' }}>No saved chats</h3>
+                            <p style={{ color: "#707070", fontSize: '12px', fontWeight: 400, textAlign: 'center', maxWidth: '300px' }}>Recent chats will appear here so you can pin, rename and continue them later.</p>
+                        </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            <div
+                                style={{ background: "#ffe2b5", width: "32px", height: "32px", borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center", position: 'relative' }}
+                            >
+                                <div style={{ position: 'absolute', width: '6px', height: '6px', borderRadius: '999px', backgroundColor: '#0B8800', bottom: '2px', right: '3px' }} />
+                                <IonLabel style={{ fontWeight: "bold", color: "#000" }}>D</IonLabel>
+                            </div>
+                            <div>
+                                <p style={{ color: "#313131", fontSize: '16px', fontWeight: 500 }}>Jonathan Danladi</p>
+                            </div>
+                        </div>
+                        <IonMenuToggle autoHide={false} style={{
+                            '--background': '#E9E9E9', '--border-width': '0',
+                            '--border-style': "none",
+                        }}>
+                            <IonItem routerLink={'/app/settings'} routerDirection={'none'} detail={false} style={{ '--background': '#E9E9E9', '--border-width': '0', '--box-shadow': 'none', '--border-style': "none", }}>
+                                <IonIcon src={settingsOutline} style={{ fontSize: '30px', color: '#5D6993' }} />
+                            </IonItem>
+                        </IonMenuToggle>
+                    </div>
+                </div>
+            </IonContent>
+        </IonMenu>
+        // </IonSplitPane >
+    );
 };
 
 export default Menu;
