@@ -181,7 +181,7 @@ const TextToImage: React.FC = () => {
                     </div>
                 </div>
             </IonFooter>
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} />
+            {/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} /> */}
         </IonPage>
     );
 };

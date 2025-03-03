@@ -3,7 +3,7 @@ import { Gallery, Import, Play } from "iconsax-react";
 import { arrowBack, chevronDownOutline, downloadOutline, playOutline, refreshOutline, settings, settingsOutline, shareOutline, shareSocialOutline, timerOutline } from "ionicons/icons";
 import React, { useEffect, useState } from "react";
 import CustomButton from "../../../utils/Button";
-import Modal from "../../../components/Modal";
+// import Modal from "../../../components/Modal";
 import { CircularProgress } from "../../../components/workspace/CircularProgress";
 import { TextToSpeechSettingsModal } from "../../../components/workspace/TextToSpeechSettingsModal";
 
@@ -316,7 +316,7 @@ const SoundGeneration: React.FC = () => {
                 show={isSettingsOpen}
                 onClose={() => setIsSettingsOpen(false)}
             />
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} />
+            {/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} /> */}
         </IonPage >
     );
 };

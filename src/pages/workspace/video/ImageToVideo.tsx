@@ -246,7 +246,7 @@ const ImageToVideo: React.FC = () => {
                     onImageSelect={handleImageSelect}
                     onClose={() => setShowMiniUpload(false)}
                 />}
-            <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} />
+            {/* <Modal isOpen={isModalOpen} onClose={() => setModalOpen(false)} selectedModel={selectedModel} setSelectedModel={setSelectedModel} modelOptions={modelOptions} /> */}
         </IonPage>
     );
 };
